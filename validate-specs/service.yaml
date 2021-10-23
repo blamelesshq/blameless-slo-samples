@@ -1,0 +1,11 @@
+apiVersion: blameless/v1alpha
+kind: Service
+
+metadata:
+  name: string        # unique name of the Service (group of SLIs)
+  displayName: string # optional
+
+spec:
+  description: string
+  notes: string       # optional
+  owner: string       # name of a user in your Blmameless account (e.g. user email)

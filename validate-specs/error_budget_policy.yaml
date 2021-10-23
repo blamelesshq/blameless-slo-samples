@@ -1,0 +1,12 @@
+apiVersion: blameless/v1alpha
+kind: ErrorBudgetPolicy
+
+metadata:
+  name: string        # unique name for the Error Budget Policy
+  displayName: string # optional 
+
+spec:
+  description: string
+
+  alertPolicies: # list of notification policies
+  - string

@@ -1,0 +1,10 @@
+apiVersion: blameless/v1alpha
+kind: UserJourney
+
+metadata:
+  name: string        # unique name of the User Journey
+  displayName: string # optional
+
+spec:
+  description: string # optional - maps to user journey definition
+  owner: string       # full user name defined in Blameless

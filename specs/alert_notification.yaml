@@ -1,0 +1,16 @@
+apiVersion: openslo/v1alpha
+kind: AlertNotificationTarget
+
+metadata:
+  name:
+  displayName: string # optional, human readable name
+
+spec:
+  target: # required
+  description: # optional
+  parameters: # optional, list of parameters for the notification target
+    - name: string # required
+      description: string # optional
+      type: string # required, string, secret, number, url
+      value: string # optional
+      defaultValue: string # optional

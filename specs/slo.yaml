@@ -1,0 +1,31 @@
+apiVersion: blameless/v1alpha
+kind: SLO # Service Level Objective
+
+metadata:
+  name: string        # unique name of the SLO
+  displayName: string # optional
+
+  userJourney: string # name of the user journey to associate this SLO with - See spec for UserJourney
+
+spec:
+  description: string # optional - maps to user journey definition
+
+  owner: string       # name of a user in your Blmameless account (e.g. user email)
+
+  # SLO status (required)
+  #    Error budget notification policy activated only in Testing and Active mode.
+  #    SLO settings can only be changed in Development and Testing mode via the Blameless web console.
+  sloStatus: development | testing | active
+
+  sliName: string     # name of the SLI to apply this SLO to
+
+  # objective
+  target: numeric [0.0, 1.0) # reliability target for this SLO
+
+  # if SLI type is thresholdMetric type
+  op: lte | gte | lt | gt    # conditional operator used to compare the SLI against the value.
+  value: numeric             # value used to compare metrics values (e.g. Latency)
+  valueMetric: ms | s
+
+  # required
+  errorBudgetPolicyName: string # name of the error budget policy to attach to this SLO - See spec for AlertPolicy

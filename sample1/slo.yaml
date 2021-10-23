@@ -1,0 +1,31 @@
+apiVersion: blameless/v1alpha
+kind: SLO # Service Level Objective
+
+metadata:
+  name: SLO Latency (sample 1)        # unique name of the SLO
+  displayName: slo.yaml found @ blameless-slo-samples/sample1 # optional
+
+  userJourney: User Journey (sample 1) # name of the user journey to associate this SLO with - See spec for UserJourney
+
+spec:
+  description: "Source: http://blamelesshq/blameless-slo-sample/sample1/slo.yaml" # optional - maps to user journey definition
+
+  owner: nicolas@blameless.com       # name of a user in your Blmameless account (e.g. user email)
+
+  # SLO status (required)
+  #    Error budget notification policy activated only in Testing and Active mode.
+  #    SLO settings can only be changed in Development and Testing mode via the Blameless web console.
+  sloStatus: development              # possible values: development | testing | active
+
+  sliName: SLI Latency (sample 1)     # name of the SLI to apply this SLO to
+
+  # objective
+  target:  0.95 # reliability target for this SLO - Possible values: numeric [0.0, 1.0)
+
+  # if SLI type is thresholdMetric type
+  op: lt    # conditional operator used to compare the SLI against the value - possible values: lte | gte | lt | gt
+  value: 6200             # value used to compare metrics values (e.g. Latency)
+  valueMetric: ms         # possible values: ms | s
+
+  # required
+  # errorBudgetPolicyName: string # name of the error budget policy to attach to this SLO - See spec for AlertPolicy
