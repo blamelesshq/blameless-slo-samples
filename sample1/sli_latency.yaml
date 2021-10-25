@@ -14,6 +14,6 @@ spec:
 
   thresholdMetric:     # represents the metric used to inform the SLO in the objectives stanza
     source: prometheus     # data source for the metric
-    # queryType: string  # a name for the type of query to run on the data source
+    queryType: string  # a name for the type of query to run on the data source
     query: avg(http_request_duration_microseconds{job="fox-blamo"}) # the query to run to return the metric
     # metadata:          # optional, allows data source specific details to be passed

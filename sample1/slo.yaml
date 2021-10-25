@@ -28,4 +28,4 @@ spec:
   valueMetric: ms         # possible values: ms | s
 
   # required
-  # errorBudgetPolicyName: string # name of the error budget policy to attach to this SLO - See spec for AlertPolicy
+  errorBudgetPolicyName: string # name of the error budget policy to attach to this SLO - See spec for AlertPolicy
