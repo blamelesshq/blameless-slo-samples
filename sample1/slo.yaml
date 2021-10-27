@@ -3,12 +3,12 @@ kind: SLO # Service Level Objective
 
 metadata:
   name: SLO Latency (sample 1)        # unique name of the SLO
-  displayName: slo.yaml found @ blameless-slo-samples/sample1 # optional
+  displayName: slo.yaml found at blameless-slo-samples/sample1 # optional
 
   userJourney: User Journey (sample 1) # name of the user journey to associate this SLO with - See spec for UserJourney
 
 spec:
-  description: "Source: http://blamelesshq/blameless-slo-sample/sample1/slo.yaml" # optional - maps to user journey definition
+  description: "source: http://blamelesshq/blameless-slo-sample/sample1/slo.yaml" # optional - maps to user journey definition
 
   owner: nicolas@blameless.com       # name of a user in your Blmameless account (e.g. user email)
 
@@ -17,10 +17,10 @@ spec:
   #    SLO settings can only be changed in Development and Testing mode via the Blameless web console.
   sloStatus: development              # possible values: development | testing | active
 
-  sliName: SLI Latency (sample 1)     # name of the SLI to apply this SLO to
+  sliName: SLI Latency2               # name of the SLI to apply this SLO to
 
   # objective
-  target:  0.95 # reliability target for this SLO - Possible values: numeric [0.0, 1.0)
+  target:  95.0 # reliability target for this SLO - Possible values: numeric [0.0, 99.999)
 
   # if SLI type is thresholdMetric type
   op: lt    # conditional operator used to compare the SLI against the value - possible values: lte | gte | lt | gt

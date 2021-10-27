@@ -3,9 +3,9 @@ kind: Service
 
 metadata:
   name: Service (sample 1)  # unique name of the Service (group of SLIs)
-  displayName: service.yaml found @ blameless-slo-samples/sample1   # optional
+  displayName: service.yaml found at blameless-slo-samples/sample1   # optional
 
 spec:
-  description: "Source: http://blamelesshq/blameless-slo-sample/sample1/service.yaml"
+  description: "source: http://blamelesshq/blameless-slo-sample/sample1/service.yaml"
   # notes: string                 # optional
   owner: nicolas@blameless.com  # name of a user in your Blmameless account (e.g. user email)

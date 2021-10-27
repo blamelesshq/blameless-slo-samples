@@ -1,0 +1,10 @@
+apiVersion: blameless/v1alpha
+kind: UserJourney
+
+metadata:
+  name: User Journey (sample 2)        # unique name of the User Journey
+  displayName: user_journey.yaml found at blameless-slo-samples/sample2 # optional
+
+spec:
+  description: "source: http://blamelesshq/blameless-slo-sample/sample2/user_journey.yaml" # optional - maps to user journey definition
+  owner: nicolas@blameless.com       # full user name defined in Blameless

@@ -1,0 +1,27 @@
+apiVersion: blameless/v1alpha
+kind: SLI # Service Level Indicator
+
+metadata:
+  name: SLI Availability (sample 2)        # unique name of the SLI
+  displayName: sli_availabilty.yaml found at blameless-slo-samples/sample2 # optional
+
+  service: Service (sample 2)     # name of the service to associate this SLI with
+
+spec:
+  description: "source: http://blamelesshq/blameless-slo-sample/sample2/sli_availability.yaml" # optional - maps to user SLI definition in Blameless
+
+  owner: nicolas@blameless.com       # name of a user in your Blmameless account (e.g. user email)
+
+  sliType: availability # possible values: availability | latency | throughput | saturation
+
+  ratioMetric:
+    good: # the numerator
+      source: prometheus    # data source for the metric
+      queryType: string     # a name for the type of query to run on the data source
+      query: sum(rate(nginx_ingress_controller_request_size_count{status="200"}[1m])) # the query to run to return the metric
+      # metadata:             # optional, allows data source specific details to be passed
+    total: # the denominator
+      source: prometheus    # data source for the metric
+      queryType: string     # a name for the type of query to run on the data source
+      query: sum(rate(nginx_ingress_controller_request_size_count{status="200"}[1m])) + sum(rate(nginx_ingress_controller_request_size_count{status="500"}[1m])) # the query to run to return the metric
+      # metadata:           # optional, allows data source specific details to be passed

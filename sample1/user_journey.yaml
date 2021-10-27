@@ -3,8 +3,8 @@ kind: UserJourney
 
 metadata:
   name: User Journey (sample 1)        # unique name of the User Journey
-  displayName: user_journey.yaml found @ blameless-slo-samples/sample1 # optional
+  displayName: user_journey.yaml found at blameless-slo-samples/sample1 # optional
 
 spec:
-  description: "Source: http://blamelesshq/blameless-slo-sample/sample1/user_journey.yaml" # optional - maps to user journey definition
+  description: "source: http://blamelesshq/blameless-slo-sample/sample1/user_journey.yaml" # optional - maps to user journey definition
   owner: nicolas@blameless.com       # full user name defined in Blameless
