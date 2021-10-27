@@ -13,6 +13,8 @@ spec:
   owner: nicolas@blameless.com       # name of a user in your Blmameless account (e.g. user email)
 
   sliType: latency # possible values: availability | latency | throughput | saturation
+  
+  owner: nicolas@blameless.com  # name of a user in your Blmameless account (e.g. user email)
 
   thresholdMetric:     # represents the metric used to inform the SLO in the objectives stanza
     source: prometheus     # data source for the metric
