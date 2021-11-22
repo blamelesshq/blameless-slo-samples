@@ -17,7 +17,7 @@ spec:
   #    SLO settings can only be changed in Development and Testing mode via the Blameless web console.
   sloStatus: development              # possible values: development | testing | active
 
-  sliName: SLI Latency 3               # name of the SLI to apply this SLO to
+  sliName: SLI Latency (sample 3) v1               # name of the SLI to apply this SLO to
 
   # objective
   target:  92.0 # reliability target for this SLO - Possible values: numeric [0.0, 99.999)
