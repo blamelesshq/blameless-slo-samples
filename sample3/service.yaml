@@ -1,0 +1,11 @@
+apiVersion: blameless/v1alpha
+kind: Service
+
+metadata:
+  name: Service (sample 3)  # unique name of the Service (group of SLIs)
+  displayName: service.yaml found at blameless-slo-samples/sample3   # optional
+
+spec:
+  description: "source: http://blamelesshq/blameless-slo-sample/sample3/service.yaml"
+  # notes: string                 # optional
+  owner: kristijan@blameless.com  # name of a user in your Blmameless account (e.g. user email)
