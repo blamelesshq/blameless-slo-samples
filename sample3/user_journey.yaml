@@ -2,7 +2,7 @@ apiVersion: blameless/v1alpha
 kind: UserJourney
 
 metadata:
-  name: User Journey (sample 1)        # unique name of the User Journey
+  name: User Journey (sample 3)        # unique name of the User Journey
   displayName: user_journey.yaml found at blameless-slo-samples/sample3 # optional
 
 spec:
