@@ -1,0 +1,21 @@
+apiVersion: blameless/v1alpha
+kind: SLI # Service Level Indicator
+
+metadata:
+  name: SLI Latency (slo-as-code)        # unique name of the SLI
+  displayName: sli_latency.yaml found at blameless-slo-samples/sample4 # optional
+
+  service: Service (SLO-as-Code)     # name of the service to associate this SLI with
+
+spec:
+  description: "source: http://blamelesshq/blameless-slo-sample/sample4/sli_latency.yaml" # optional - maps to user SLI definition in Blameless
+
+  owner: nicolas@blameless.com       # name of a user in your Blameless account (e.g. user email)
+
+  sliType: latency        # possible values: availability | latency | throughput | saturation
+  
+  thresholdMetric:        # represents the metric used to inform the SLO in the objectives stanza
+    source: prometheus    # data source for the metric
+    queryType: string     # a name for the type of query to run on the data source
+    query: avg_over_time(api_request_duration_seconds{code="200", path="/api/v1/users"}[30m])                # the query to run to return the metric
+    # metadata:           # optional, allows data source specific details to be passed
