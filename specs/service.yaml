@@ -8,4 +8,4 @@ metadata:
 spec:
   description: string
   notes: string       # optional
-  owner: string       # name of a user in your Blmameless account (e.g. user email)
+  owner: string       # required - name of a user in your Blmameless account (e.g. user email)

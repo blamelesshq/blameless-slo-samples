@@ -2,11 +2,35 @@ apiVersion: blameless/v1alpha
 kind: ErrorBudgetPolicy
 
 metadata:
-  name: string        # unique name for the Error Budget Policy
-  displayName: string # optional 
+  name: string            # unique name for the Error Budget Policy
+  displayName: string        # optional 
 
 spec:
   description: string
 
-  alertPolicies: # list of notification policies
-  - string
+  notificationPolicies:      # list of notification policies
+  - thresholdType: percent_depleted    # supported values: [percent_depleted | days_left]
+    threshold: 12   # supported values: percent_depleted --> [0.1 to 0.99999], days_left --> [0 to 27 days]
+    notifications:
+        email:              # optional - must be a list of valid email addresses (xxx@xxx.xxx) 
+          - kristijan@blameless.com
+        slack:               # optional - at least one team or channel or one user must be specified 
+          channels:
+            - string
+            - string
+          users:
+            - string
+            - string
+        teams:               # optional - at least one team or channel or one user must be specified 
+          teams:
+            - string
+            - string
+          channels:
+            - string
+            - string
+          users:
+            - string
+            - string
+        incident:            # optional
+          severity: SEV1   # supported values: SEV0, SEV1, SEV2, SEV3 (default severity levels not user-defined labels)
+          type: default     
