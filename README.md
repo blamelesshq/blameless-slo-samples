@@ -1,8 +1,9 @@
 # Blameless SLO YAML specs and Samples
 
-Preview of the Blameless SLO YAML specs.
+*Preview of the Blameless SLO YAML specs*
 
 
+The latest specification documentation can be found under the [/spec](https://github.com/blamelesshq/blameless-slo-samples/tree/main/specs) directory. 
 
 For more information about **Blameless SLO Manager**
 
