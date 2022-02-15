@@ -148,7 +148,7 @@ The Blameless SLO CLI supports the following commands
 
 ### Validate
 
-The `validate` command is used for validation `.yaml` specs before they are executed and records beeing created.
+The `validate` command is used to validate `.yaml` specs before deploying the defined SLO resources in Blameless SLO Manager.
 
 ```jsx
  blameless-slo validate -s <source> -f <path_to_yaml>
@@ -158,41 +158,47 @@ Options:
    * **`<source>`**: local | github
    * **`<path_to_yaml>`**: Path to your .yaml file or folder containing multiple .yaml files.
 
+Examples:
+```jsx
+ blameless-slo validate -s github -f sample1
+```
 
 
-#### Validation message types
+Note: Your targeted Github repository is setup during the initialization of your blameless-slo CLI with the appropriate Github (Personal Access Token) and your Blameless credentials. More information to be provided on this later.
 
-There are tree types of validations message types: 
 
-- `[BLAMELESS] WARNING`
-- `[BLAMELESS] SUCCESS`
-- `[BLAMELESS] ERROR`
+
+#### Validation output
+
+There are tree types of validations messages: 
+
+- :heavy_check_mark: `[BLAMELESS] SUCCESS`
+- :warning: `[BLAMELESS] WARNING`
+- :x: `[BLAMELESS] ERROR`
 
 **Examples:**
 
-```bat
-blameless-slo validate -s locals -f ./specs/
-```
-
-:warning: **[BLAMELESS] WARNING : Please specify type: Allowed options are: github | local**. In this case we are displaying this kind of warning because there is typo at source.
-
-
-
+Example when the validation completed successfully for a selected YAML spec:
 ```bat
 blameless-slo validate -s local -f ./specs/user_journey.yaml
 ```
 
-:heavy_check_mark: **[BLAMELESS] SUCCESS : ========== Blameless UserJourney Validated Successfully ==========**. In this case we are displaying this kind od message because validation step for that spec was successfull.
+:heavy_check_mark: **[BLAMELESS] SUCCESS : ========== Blameless UserJourney Validated Successfully ==========**.
+
+Example when the source type is incorrect (typo):
+```bat
+blameless-slo validate -s locals -f ./specs/
+```
+
+:warning: **[BLAMELESS] WARNING : Please specify type: Allowed options are: github | local**.
 
 
-
+Example: Showing the list of syntax errors in the YAML spec 
 ```bat
 blameless-slo validate -s local -f ./specs/sli.yaml
 ```
 
-:x: **[BLAMELESS] ERROR : ========== Blameless SLI Validation Errors ==========**. In this case we are displaying this kind od message because validation step for that spec was failed. Besides that we are displaying also information what is wrong.
-
-**[BLAMELESS] ERROR : ========== Blameless SLI Validation Errors ========== **<br />
+:x: **[BLAMELESS] ERROR : ========== Blameless SLI Validation Errors ==========**.
 [BLAMELESS] ERROR : 1: "spec.metricSource.mode" must be one of [direct, gcp, lambda] <br />
 [BLAMELESS] ERROR : 2: "spec.metricSource.sourceName" is required <br />
 [BLAMELESS] ERROR : 3: "spec.metricSource.name" is not allowed <br />
@@ -201,7 +207,7 @@ blameless-slo validate -s local -f ./specs/sli.yaml
 
 ### Deploy
 
-The `deploy` command is used for creating/updating resources in your Blameless instance. When you execute that command first it will validate specified yaml files, and if everything is okay, than it will proceed further by deploying resources.
+The `deploy` command is used to create/update SLO resources in Blameless. When you execute that command, it first validates the specified yaml files, and if everything is okay, than it will proceed further by deploying resources.
 
 ```jsx
  blameless-slo deploy -s <source> -f <path_to_yaml>
