@@ -198,7 +198,7 @@ Example: Showing the list of syntax errors in the YAML spec
 blameless-slo validate -s local -f ./specs/sli.yaml
 ```
 
-:x: **[BLAMELESS] ERROR : ========== Blameless SLI Validation Errors ==========**.
+:x: **[BLAMELESS] ERROR : ========== Blameless SLI Validation Errors ==========**. <br />
 [BLAMELESS] ERROR : 1: "spec.metricSource.mode" must be one of [direct, gcp, lambda] <br />
 [BLAMELESS] ERROR : 2: "spec.metricSource.sourceName" is required <br />
 [BLAMELESS] ERROR : 3: "spec.metricSource.name" is not allowed <br />
