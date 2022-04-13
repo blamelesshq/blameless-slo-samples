@@ -1,0 +1,27 @@
+apiVersion: blameless/v1alpha
+kind: SLI # Service Level Indicator
+
+metadata:
+  name: SLI Availability-pingdom-availability        # unique name of the SLI
+  displayName: sli.yaml found at blameless-slo-samples/pingdom/availability # optional
+
+  service: Service-pingdom-availability     # name of the service to associate this SLI with
+
+spec:
+  description: "source: http://blamelesshq/blameless-slo-sample/pingdom/availability/sli.yaml" # optional - maps to user SLI definition in Blameless
+
+  owner: nicolas@blameless.com       # name of a user in your Blameless account (e.g. user email)
+
+  sliType: availability        # possible values: availability | latency | throughput | saturation
+  
+  ratioMetric:
+    good: # the numerator
+      source: pingdom    # data source for the metric
+      queryType: string     # a name for the type of query to run on the data source
+      query: "7518093" # the query to run to return the metric
+      # metadata:             # optional, allows data source specific details to be passed
+    total: # the denominator
+      source: pingdom    # data source for the metric
+      queryType: string     # a name for the type of query to run on the data source
+      query: "7518093" # the query to run to return the metric
+      # metadata:           # optional, allows data source specific details to be passed
