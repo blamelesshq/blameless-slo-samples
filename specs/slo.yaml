@@ -25,6 +25,6 @@ spec:
   # if SLI type is thresholdMetric type
   op: lte | gte | lt | gt    # conditional operator used to compare the SLI against the value.
   value: numeric             # value used to compare metrics values (e.g. Latency)
-  valueMetric: ms | s
+  valueMetric: ms | s | rpm | rps | GB | MB
 
   errorBudgetPolicyName: string # optional - name of the error budget policy to attach to this SLO - See spec for AlertPolicy
