@@ -1,0 +1,10 @@
+apiVersion: blameless/v1alpha
+kind: UserJourney
+
+metadata:
+  name: User Journey-pingdom-latency        # unique name of the User Journey
+  displayName: user_journey.yaml found at blameless-slo-samples/pingdom/latency # optional
+
+spec:
+  description: "source: http://blamelesshq/blameless-slo-sample/pingdom/latency/user_journey.yaml" # optional - maps to user journey definition
+  owner: nicolas@blameless.com       # full user name defined in Blameless

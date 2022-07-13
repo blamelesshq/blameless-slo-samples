@@ -1,0 +1,11 @@
+apiVersion: blameless/v1alpha
+kind: Service
+
+metadata:
+  name: Service-datadog-availability  # unique name of the Service (group of SLIs)
+  displayName: service.yaml found at blameless-slo-samples/datadog/availability   # optional
+
+spec:
+  description: "source: http://blamelesshq/blameless-slo-sample/datadog/availability/service.yaml"
+  # notes: string                 # optional
+  owner: nicolas@blameless.com  # name of a user in your Blmameless account (e.g. user email)

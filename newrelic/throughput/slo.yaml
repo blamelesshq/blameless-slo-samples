@@ -1,0 +1,31 @@
+apiVersion: blameless/v1alpha
+kind: SLO # Service Level Objective
+
+metadata:
+  name: SLO Throughput-newrelic-throughput        # unique name of the SLO
+  displayName: slo.yaml found at blameless-slo-samples/newrelic/throughput # optional
+
+  userJourney: User Journey-newrelic-throughput # name of the user journey to associate this SLO with - See spec for UserJourney
+
+spec:
+  description: "source: http://blamelesshq/blameless-slo-sample/newrelic/throughput/slo.yaml" # optional - maps to user journey definition
+
+  owner: nicolas@blameless.com       # name of a user in your Blmameless account (e.g. user email)
+
+  # SLO status (required)
+  #    Error budget notification policy activated only in Testing and Active mode.
+  #    SLO settings can only be changed in Development and Testing mode via the Blameless web console.
+  sloStatus: development              # possible values: development | testing | active
+
+  sliName: SLI Throughput-newrelic-throughput              # name of the SLI to apply this SLO to
+
+  # objective
+  target:  99.5 # reliability target for this SLO - Possible values: numeric [0.0, 99.999)
+
+  # if SLI type is thresholdMetric type
+  op: gt    # conditional operator used to compare the SLI against the value - possible values: lte | gte | lt | gt
+  value: 250000             # value used to compare metrics values (e.g. Throughput)
+  valueMetric: rps         # possible values: rpm | rps
+
+  # required
+  errorBudgetPolicyName: string # name of the error budget policy to attach to this SLO - See spec for AlertPolicy

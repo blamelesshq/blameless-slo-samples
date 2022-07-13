@@ -1,0 +1,21 @@
+apiVersion: blameless/v1alpha
+kind: SLI # Service Level Indicator
+
+metadata:
+  name: SLI Saturation-newrelic-saturation        # unique name of the SLI
+  displayName: sli.yaml found at blameless-slo-samples/newrelic/saturation # optional
+
+  service: Service-newrelic-saturation     # name of the service to associate this SLI with
+
+spec:
+  description: "source: http://blamelesshq/blameless-slo-sample/newrelic/saturation/sli.yaml" # optional - maps to user SLI definition in Blameless
+
+  owner: nicolas@blameless.com       # name of a user in your Blameless account (e.g. user email)
+
+  sliType: saturation        # possible values: availability | latency | throughput | saturation
+  
+  thresholdMetric:        # represents the metric used to inform the SLO in the objectives stanza
+    source: newrelic     # data source for the metric
+    queryType: string     # a name for the type of query to run on the data source
+    query: SELECT sum(go_memstats_heap_inuse_bytes)/sum(go_memstats_heap_sys_bytes) FROM Metric # the query to run to return the metric
+    # metadata:           # optional, allows data source specific details to be passed
